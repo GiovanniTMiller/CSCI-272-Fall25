@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	//Creating an array without specifying the size
+	double numbers[] = {31, 52, 33, 22, 14, 77};
+	
+	double sum = 0;
+	double count= 0;
+	double average;
+	
+	cout << "The numbers are: ";
+	
+	//Printing the elements of the array
+	for (const double &n : numbers) {
+		cout << n << " ";
+		
+		//Calculating the sum
+		sum += n;
+		
+		//Counting the number of array elements
+		++count;
+	}
+	
+	//Printing the sum
+	cout << "\nTheir Sum = " << sum << endl;
+	
+	// Finding the average
+	average = sum / count;
+	cout << "Their Average = " << average << endl;
+	
+	return 0;
+}
