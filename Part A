@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+	//Creating a vector of Food
+std::vector<std::string> menu = {"Jerk Chicken", "Oxtail", "Turkey", "Ham", "Cow Foot"};
+   
+
+	menu.erase(menu.begin()+4);
+	// Changing the value of the second element.Running into an issue where it is combing the new second element with the zero element
+	menu[2] = "Stew";
+	
+	cout << menu[2];
+	menu.push_back("Soup");
+	menu.push_back("Rice");
+	menu.push_back("Fish");
+	menu.push_back("Noodles");
+	menu.push_back("Pasta");
+	
+		for (const std::string& menu : menu) {
+		std::cout << menu << std::endl;
+	}
+	
+	for (std::string& menu : menu) {
+		menu += "!";
+	}
+	
+	std::cout << "\nMenu after modification:" <<std::endl;
+	for (const std::string& menu : menu) {
+		std::cout << menu << std::endl;
+	}
+   
+	
+	return 0;
+}
