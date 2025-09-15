@@ -1,0 +1,26 @@
+#include <iostream>
+#include <numeric>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+// Calculates the avaerage of a vector
+double calculateAverage(const std::vector<int>& vec) {
+	
+	double sum = std::accumulate(vec.begin(), vec.end(), 0.0);
+	
+	return sum / vec.size();
+}
+
+int main() {
+	std::vector<int> StudentID = {23, 44, 88, 54, 62, 33, 57, 28, 39, 82};
+	 double average = calculateAverage(StudentID);
+	std::cout << "Average ID #:" << average << std::endl;
+	
+	auto max_it = std::max_element(StudentID.begin(), StudentID.end());
+	
+	int highest_value = *max_it;
+	std::cout << "The highest Student ID # is: " << highest_value << std::endl;
+	
+	return 0;
+}
